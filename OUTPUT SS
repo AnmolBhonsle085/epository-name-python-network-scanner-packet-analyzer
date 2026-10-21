@@ -1,0 +1,9 @@
+Output: Port connection succeeds
+-----------------------------------
+Port is open
+Capturing 5 TCP packets...
+Ether / IP / TCP 192.168.1.5:52000 > 93.184.216.34:http S
+Ether / IP / TCP 93.184.216.34:http > 192.168.1.5:52000 SA
+Ether / IP / TCP 192.168.1.5:52000 > 93.184.216.34:http A
+Ether / IP / TCP 192.168.1.5:52001 > 142.250.x.x:https PA
+Ether / IP / TCP 142.250.x.x:https > 192.168.1.5:52001 A
