@@ -24,6 +24,9 @@ sock.close()
 # Part 2: Scapy captures network packets
 def packet_callback(packet):
     if IP in packet:
+        print("Source IP:", packet[IP].src)
+        print("Destination IP:", packet[IP].dst)
+
         if TCP in packet:
             print("TCP Packet:", packet.summary())
 
@@ -36,6 +39,8 @@ def packet_callback(packet):
         elif ICMP in packet:
             print("ICMP Packet:", packet.summary())
 
+        print("-" * 40)
+
 
 print("Capturing network packets...")
 print("Protocols: TCP, UDP, ICMP, DNS")
@@ -43,5 +48,6 @@ print("Protocols: TCP, UDP, ICMP, DNS")
 sniff(
     filter="ip",
     count=20,
-    prn=packet_callback
+    prn=packet_callback,
+    store=False
 )
