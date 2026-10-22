@@ -48,17 +48,6 @@ https://npcap.com/#download
 3. The callback function checks for IP, TCP, UDP, DNS, and ICMP layers.
 4. Source IP addresses, destination IP addresses, and packet summaries are printed to the terminal.
 
-**Example Output**
-
-Port is open
-Capturing network packets...
-Protocols: TCP, UDP, ICMP, DNS
-
-Source IP: 192.168.1.5
-Destination IP: 93.184.216.34
-TCP Packet: IP / TCP 192.168.1.5:5000 > 93.184.216.34:http S
-----------------------------------------
-
 **Learning Outcomes**
 
 - Understanding TCP socket connections and port checks
