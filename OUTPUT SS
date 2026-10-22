@@ -1,9 +1,0 @@
-Port is open
-Capturing network packets...
-Protocols: IP, TCP, UDP, ICMP, DNS
-
-TCP Packet: Ether / IP / TCP 192.168.1.5:52000 > 45.33.32.156:http S
-TCP Packet: Ether / IP / TCP 45.33.32.156:http > 192.168.1.5:52000 SA
-DNS Packet: Ether / IP / UDP / DNS Qry "example.com."
-UDP Packet: Ether / IP / UDP 192.168.1.5:53000 > 8.8.8.8:domain
-ICMP Packet: Ether / IP / ICMP 192.168.1.5 > 8.8.8.8 echo-request
