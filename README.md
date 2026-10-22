@@ -1,6 +1,6 @@
 **Python Network Scanner & Packet Analyzer**
 
-A beginner-friendly Python cybersecurity project that checks TCP port connectivity and captures network packets using Python's "socket" module and Scapy.
+A Python cybersecurity project that checks TCP port connectivity and captures network packets using Python's "socket" module and Scapy.
 
 **Features**
 
