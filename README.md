@@ -56,6 +56,6 @@ https://npcap.com/#download
 - Inspecting source and destination IP addresses
 - Practicing Python for network analysis
 
-Disclaimer
+**Disclaimer**
 
 Use this project only on systems and networks you own or have explicit permission to test. Packet capture may require administrator privileges and Npcap on Windows.
