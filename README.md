@@ -1,71 +1,77 @@
-Python Network Scanner & Packet Analyzer
+*Python Network Scanner & Packet Analyzer*
 
-A beginner-friendly cybersecurity project built with Python, Socket, and Scapy to check TCP port connectivity and capture network packets for basic analysis.
+A beginner-friendly Python cybersecurity project that checks TCP port connectivity and captures network packets using Python's "socket" module and Scapy.
 
 Features
 
-- TCP Port Checking: Uses Python's "socket" module to check whether a target host's TCP port accepts connections.
-- Packet Capture: Uses Scapy's "sniff()" function to capture network packets.
-- TCP Packet Filtering: Filters captured traffic to focus on TCP packets.
-- Packet Summaries: Displays brief summaries of captured packets, including available IP addresses, ports, and TCP information.
+- TCP Port Checking: Checks connectivity to a target host on a specified TCP port.
+- Packet Capture: Captures up to 20 packets visible on the selected network interface.
+- Protocol Identification: Identifies TCP, UDP, ICMP, and DNS traffic over IPv4.
+- IP Address Analysis: Displays source and destination IP addresses.
+- Packet Summaries: Uses Scapy to display packet details for basic network analysis.
 
 Technologies Used
 
 - Python
 - Socket
 - Scapy
-- TCP/IP Networking
+- Npcap (Windows packet capture)
+
+Requirements
+
+- Python 3
+- Scapy
+- Npcap on Windows for packet capture
 
 Installation
 
-1. Clone the repository
-
-git clone https://github.com/YOUR-USERNAME/python-network-scanner-packet-analyzer.git
-
-2. Navigate to the project directory
-
-cd python-network-scanner-packet-analyzer
-
-3. Install Scapy
+Install Scapy:
 
 pip install scapy
 
+On Windows, install Npcap from the official website:
+
+https://npcap.com/#download
+
 Usage
 
-Run the Python script:
+1. Clone or download this repository.
+2. Open the project folder in VS Code.
+3. Save the Python code in "networkscanner.py".
+4. Run the script:
 
-python main.py
+python networkscanner.py
 
-The script attempts to connect to the configured host and port using a TCP socket. It then captures five TCP packets visible to Scapy and prints their summaries.
+5. Allow the required permissions for packet capture if prompted.
+
+How It Works
+
+1. The "socket" module attempts a TCP connection to the specified host and port.
+2. Scapy captures up to 20 IPv4 packets using "filter="ip"".
+3. The callback function checks for IP, TCP, UDP, DNS, and ICMP layers.
+4. Source IP addresses, destination IP addresses, and packet summaries are printed to the terminal.
 
 Example Output
 
 Port is open
-Capturing 5 TCP packets...
-Ether / IP / TCP ...
-Ether / IP / TCP ...
+Capturing network packets...
+Protocols: TCP, UDP, ICMP, DNS
 
-Actual output depends on the target's availability and the network traffic captured.
+Source IP: 192.168.1.5
+Destination IP: 93.184.216.34
+TCP Packet: IP / TCP 192.168.1.5:5000 > 93.184.216.34:http S
+----------------------------------------
 
-How It Works
-
-1. Creates a TCP socket using Python's "socket" module.
-2. Attempts a connection to the specified host and port.
-3. Reports whether the connection succeeded.
-4. Uses Scapy to capture five TCP packets.
-5. Displays a summary of each captured packet.
+Example output is illustrative. Actual results depend on the target host and captured network traffic.
 
 Learning Outcomes
 
-- Understanding Python socket programming.
-- Learning TCP port connectivity checks.
-- Capturing and inspecting network packets using Scapy.
-- Applying Python functions, conditions, and imported libraries to network security.
+- Understanding TCP socket connections and port checks
+- Learning basic packet capture with Scapy
+- Identifying common network protocols
+- Inspecting source and destination IP addresses
+- Practicing Python for network analysis
 
 Disclaimer
 
-This project is intended for educational purposes and authorized security testing only. Scan only systems you own or have explicit permission to test. Capture network traffic only where you are authorized to do so.
-
-Author
-
-Cybersecurity Enthusiast | Python | Network Security
+Use this project only on systems and networks you own or have explicit permission to test. Packet capture may require administrator privileges and Npcap on Windows.
