@@ -1,5 +1,5 @@
 import socket
-from scapy.all import sniff, IP, TCP
+from scapy.all import sniff, IP, TCP, UDP, ICMP, DNS
 
 # Part 1: Socket checks a port
 host = "scanme.nmap.org"
@@ -21,15 +21,27 @@ else:
 sock.close()
 
 
-# Part 2: Scapy captures TCP packets
+# Part 2: Scapy captures network packets
 def packet_callback(packet):
-    if IP in packet and TCP in packet:
-        print(packet.summary())
+    if IP in packet:
+        if TCP in packet:
+            print("TCP Packet:", packet.summary())
+
+        elif UDP in packet and DNS in packet:
+            print("DNS Packet:", packet.summary())
+
+        elif UDP in packet:
+            print("UDP Packet:", packet.summary())
+
+        elif ICMP in packet:
+            print("ICMP Packet:", packet.summary())
 
 
-print("Capturing 5 TCP packets...")
+print("Capturing network packets...")
+print("Protocols: TCP, UDP, ICMP, DNS")
+
 sniff(
-    filter="tcp",
-    count=5,
+    filter="ip",
+    count=20,
     prn=packet_callback
 )
