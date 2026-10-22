@@ -24,6 +24,8 @@ sock.close()
 # Part 2: Scapy captures network packets
 def packet_callback(packet):
     if IP in packet:
+        print("Source IP:", packet[IP].src)
+        print("Destination IP:", packet[IP].dst)
         if TCP in packet:
             print("TCP Packet:", packet.summary())
 
